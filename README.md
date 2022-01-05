@@ -1,2 +1,2 @@
 # AraujoAutomationTest
-Escreva seu teste aqui
+Inclua seu teste aqui
