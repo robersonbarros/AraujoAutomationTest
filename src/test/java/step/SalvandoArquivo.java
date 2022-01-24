@@ -30,7 +30,7 @@ public class SalvandoArquivo {
         driver = new ChromeDriver();
     }
 
-    @Given("Eu estou na pagina da Araujo")
+    @Given("^Eu estou na pagina da Araujo")
     public void acessarAraujo() {
         driver.get("https://www.araujo.com.br");
     }
@@ -48,7 +48,7 @@ public class SalvandoArquivo {
 
     }
 
-    @Then("Eu registro o titulo da pagina em um arquivo")
+    @Then("^Eu registro o titulo da pagina em um arquivo")
     public void registrarTitulo() {
         String tituloPagina = driver.getTitle();
         try {

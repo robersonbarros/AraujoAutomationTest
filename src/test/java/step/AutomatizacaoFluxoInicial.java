@@ -35,7 +35,7 @@ public class AutomatizacaoFluxoInicial {
         driver = new ChromeDriver();
     }
 
-    @Given("Eu estou na pagina inicial da Araujo")
+    @Given("^Eu estou na pagina inicial da Araujo")
     public void acessarAraujo() {
         driver.get("https://www.araujo.com.br");
     }
@@ -53,7 +53,7 @@ public class AutomatizacaoFluxoInicial {
 
     }
 
-    @And("clico em comprar")
+    @And("^clico em comprar")
     public void comprarProduto(){
 
         WebElement btnAceitarCookies = driver.findElement(By.cssSelector("a.cc-btn.cc-allow"));
@@ -69,7 +69,7 @@ public class AutomatizacaoFluxoInicial {
         botaoComprar.click();
     }
 
-    @And("adiciono o produto ao carrinho")
+    @And("^adiciono o produto ao carrinho")
     public void adicionarProdutoCarrinho(){
 
         WebElement btnAceitarCookies = driver.findElement(By.cssSelector("a.cc-btn.cc-allow"));
@@ -84,7 +84,7 @@ public class AutomatizacaoFluxoInicial {
 
     }
 
-    @And("Removo o produto do carrinho")
+    @And("^Removo o produto do carrinho")
     public void removerProdutoCarrinho(){
 
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("button.x-minicart__item-remove")));
@@ -98,7 +98,7 @@ public class AutomatizacaoFluxoInicial {
         btnRmvProduto.click();
     }
 
-    @Then("O produto deve ser removido do carrinho")
+    @Then("^O produto deve ser removido do carrinho")
     public void validarRemocao() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.x-minicart__empty-text-container")));
     }
